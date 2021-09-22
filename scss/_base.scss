@@ -1,0 +1,32 @@
+//Base: contained within this file are all your resets, variables, mixins, and any utility classes.
+
+// @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Racing+Sans+One&family=Special+Elite&display=swap");
+
+// // Font Variables
+
+// $font-body: "Special Elite", sans-serif;
+// $font-header: "Fugaz One";
+// $font-button: "Fugaz One";
+
+
+
+@mixin respond($breakpoint) {
+  @if $breakpoint==tablet {
+    @media only screen and (min-width: 768px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==laptop {
+    @media only screen and (min-width: 1024px) {
+      @content;
+    }
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  // font-family: $font-body;
+  box-sizing: border-box;
+}

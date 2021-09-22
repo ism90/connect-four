@@ -1,0 +1,16 @@
+@use "./base" as *;
+
+.main {
+  background: red;
+  // normal styling code here
+
+  @include respond(tablet) {
+    background: green;
+    // responsive code for tablet viewport i.e. 600px
+  }
+
+  @include respond(laptop) {
+    background: blue;
+    // responsive code for mobile viewport i.e. 480px
+  }
+}

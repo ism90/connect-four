@@ -34,6 +34,7 @@ To be the first player to connect 4 of the same colored discs in a row (either v
 #### 2. Player Moves
 
 - random 50/50 flip for first or second
+- players have to be assigned different color
 - event listeners for clicks - or onclick val
 - for loops for checking array 
 - move has to be valid
@@ -41,6 +42,7 @@ To be the first player to connect 4 of the same colored discs in a row (either v
    - can only make move on bottom of grid
 - 'drop' the move -> has to fill array from <b>bottom up</b> in unpopulated area
 - populate array with move
+- Then 'player 2' moves - same conditions. 
 
 #### 3. Win/Draw Conditions
 
