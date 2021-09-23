@@ -20,6 +20,7 @@ To be the first player to connect 4 of the same colored discs in a row (either v
 
 - 2d empty array for game begin state
 - 6 rows 7 columns
+- 42 potential moves 
 - gridArray = [
   [null, null, null, null, null, null, null],
   [null, null, null, null, null, null, null],
@@ -40,8 +41,10 @@ To be the first player to connect 4 of the same colored discs in a row (either v
 - move has to be valid
    - can't overwrite a red or blue value
    - can only make move on bottom of grid
+   - alert if player makes invalid move
 - 'drop' the move -> has to fill array from <b>bottom up</b> in unpopulated area
 - populate array with move
+- player one move is over 
 - Then 'player 2' moves - same conditions. 
 
 #### 3. Win/Draw Conditions
