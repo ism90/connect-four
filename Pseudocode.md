@@ -30,7 +30,7 @@ To be the first player to connect 4 of the same colored discs in a row (either v
   [null, null, null, null, null, null, null],
 
 - possible Array.values() = null, red or blue
--
+
 
 #### 2. Player Moves
 
@@ -50,8 +50,16 @@ To be the first player to connect 4 of the same colored discs in a row (either v
 #### 3. Win/Draw Conditions
 
 - Check Horizontal/Vertical/Diagonal for four reds || four blues
+  - i
+  - i
 - Draw if no null left in array
 
 #### Extra
 
 - Potential variations on the normal rules - pop out, power up etc
+- If time allows, look into MinMax (recursion) for computer moves
+
+
+#### Notes
+
+PC moves will be dumb - mode for vs CPU and mode for other user?
