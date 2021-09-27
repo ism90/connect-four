@@ -52,4 +52,31 @@ const newGame = (button) => {
   console.log(slotsArray);
 };
 
+
+
+// Functions for Win Decisions
+
+// Check for Draw
+const isDraw = (slotsArray) => {
+
+
+}
+
+// Check for Winner
+const isWinner = (slotsArray) => {
+
+
+}
+
+const gameOver = (winner) => {
+
+}
+
+const setScore = (winner) => {
+  
+}
+
+
+
+
 newGame(document.getElementById("play"));
