@@ -61,6 +61,10 @@ body {
   opacity: 1;
 }
 
-.slot.clickable:hover {
-  background-color: grey;
+.slot.clickable.red:hover {
+  background-color: red;
+}
+
+.slot.clickable.blue:hover {
+  background-color: blue;
 }/*# sourceMappingURL=styles.css.map */
