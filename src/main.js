@@ -39,7 +39,17 @@ const newGame = (button) => {
           nextColor
         );
       }
-      // change player color
+
+      // Check for Game Over and handle
+      if (isDraw(slotsArray) == true) {
+        gameOver(nextColor);
+      }
+
+      if (isWinner(this.column, this.row, nextColor, slotsArray) == true) {
+        gameOver(nextColor);
+      }
+
+      // Change player color
       let oldColor = nextColor;
 
       if (nextColor == "red") {
@@ -82,13 +92,28 @@ const newGame = (button) => {
 // Functions for Win Decisions
 
 // Check for Draw
-const isDraw = (slotsArray) => {};
+
+const isDraw = (slotsArray) => {
+  let isDraw = true;
+  slotsArray.forEach((col) => {
+    col.forEach((slot) => {
+      // if there is empty slot left, can't be a draw
+      if (slot.playState == "") isDraw = false;
+    });
+  });
+  return isDraw;
+};
 
 // Check for Winner
 const isWinner = (slotsArray) => {};
 
-const gameOver = (winner) => {};
+const gameOver = (winner) => {
+  console.log("game over")
+  setScore(winner);
+};
 
-const setScore = (winner) => {};
+const setScore = (winner) => {
+  if (winner == "undefined") return;
+};
 
 newGame(document.getElementById("play"));
