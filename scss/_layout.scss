@@ -67,4 +67,8 @@ body {
   border-radius: 50%;
   box-shadow: inset 7px 7px 20px 0px rgba(50, 50, 50, 0.4);
   opacity: 1;
-}/*# sourceMappingURL=styles.css.map */
+}
+
+.slot.clickable:hover {
+  background-color: grey;
+}

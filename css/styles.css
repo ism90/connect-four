@@ -60,4 +60,7 @@ body {
   box-shadow: inset 7px 7px 20px 0px rgba(50, 50, 50, 0.4);
   opacity: 1;
 }
-/*# sourceMappingURL=styles.css.map *//*# sourceMappingURL=styles.css.map */
+
+.slot.clickable:hover {
+  background-color: grey;
+}/*# sourceMappingURL=styles.css.map */

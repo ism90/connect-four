@@ -42,12 +42,13 @@ const newGame = (button) => {
       divForSlot.onclick = function () {
         slot.clicked();
       };
-      // Space out Slot divs
-      // divForSlot.style.margin = i;
     }
     slotsArray.push(slotColumn);
   });
-
+  // Assigns clickable class to bottom row of grid & current playState
+    slotsArray.forEach(col => {
+      col[5].elementHTML.classList.add("clickable", playState)
+    });
   console.log(slotsArray);
 };
 
