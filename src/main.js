@@ -1,32 +1,51 @@
-const getSlotsHTML = document.querySelectorAll(".grid__circle");
-console.log(getSlotsHTML);
+// Game Board Builder
+const newGame = (button) => {
+  button.style.display = "none";
+  const game = document.querySelector(".game-wrapper");
 
-class Game {
-  constructor(slot) {
-    this.slot = slot;
+  const columns = [];
+  const slotsArray = [];
+
+  let nextPlayer = "blue";
+
+  for (let i = 0; i < 7; i++) {
+    const column = document.createElement("div");
+    column.className = "grid column";
+    game.appendChild(column);
+    columns.push(column);
   }
 
-  // Generates Array for Grid divs and adds unique class names for each
-  getSlotArray() {
-    const slotArray = Array.from(getSlotsHTML);
-
-    for (let i = 0; i < slotArray.length; i++) {
-      slotArray[i].classList.add("slot" + i);
+  class Slot {
+    constructor(elementHTML, column, row) {
+      this.column = column;
+      this.row = row;
+      this.elementHTML = elementHTML;
+      //
+      this.playerMove = "";
     }
+
+    clicked() {}
   }
 
-  // Adds "active" class to current clicked div
-  handleClick() {
-    getSlotsHTML.forEach((slot) => {
-      slot.addEventListener("click", () => {
-        getSlotsHTML.forEach((slt) => slt.classList.remove("active"));
-        slot.classList.add("active");
-        console.log(getSlotsHTML);
-      });
-    });
-  }
-}
-const game = new Game(getSlotsHTML);
+  // Create Slots & Push to Column Array
+  columns.forEach((el, col) => {
+    let slotColumn = [];
+    for (i = 0; i < 6; i++) {
+      const divForSlot = document.createElement("div");
+      divForSlot.classList.add("slot");
+      el.appendChild(divForSlot);
+      //
+      const slot = new Slot(divForSlot, col, i);
+      slotColumn.push(slot);
+      //
+      divForSlot.onclick = function () {
+        slot.clicked();
+      };
+    }
+    slotsArray.push(slotColumn);
+  });
 
-game.getSlotArray();
-game.handleClick();
+  console.log(slotsArray);
+};
+
+newGame(document.getElementById("play"));

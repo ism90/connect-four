@@ -8,59 +8,24 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <div class="grid">
-      <!-- Row One -->
-      <div class="grid__circle"></div>
-      <div class="grid__circle"></div>
-      <div class="grid__circle"></div>
-      <div class="grid__circle"></div>
-      <div class="grid__circle"></div>
-      <div class="grid__circle"></div>
-      <div class="grid__circle"></div>
-      <!-- Row Two -->
-      <div class="grid__circle"></div>
-      <div class="grid__circle"></div>
-      <div class="grid__circle"></div>
-      <div class="grid__circle"></div>
-      <div class="grid__circle"></div>
-      <div class="grid__circle"></div>
-      <div class="grid__circle"></div>
-      <!-- Row Three -->
-      <div class="grid__circle"></div>
-      <div class="grid__circle"></div>
-      <div class="grid__circle"></div>
-      <div class="grid__circle"></div>
-      <div class="grid__circle"></div>
-      <div class="grid__circle"></div>
-      <div class="grid__circle"></div>
-      <!-- Row Four -->
-      <div class="grid__circle"></div>
-      <div class="grid__circle"></div>
-      <div class="grid__circle"></div>
-      <div class="grid__circle"></div>
-      <div class="grid__circle"></div>
-      <div class="grid__circle"></div>
-      <div class="grid__circle"></div>
-      <!-- Row Five -->
-      <div class="grid__circle"></div>
-      <div class="grid__circle"></div>
-      <div class="grid__circle"></div>
-      <div class="grid__circle"></div>
-      <div class="grid__circle"></div>
-      <div class="grid__circle"></div>
-      <div class="grid__circle"></div>
-      <!-- Row 6 -->
-      <div class="grid__circle"></div>
-      <div class="grid__circle"></div>
-      <div class="grid__circle"></div>
-      <div class="grid__circle"></div>
-      <div class="grid__circle"></div>
-      <div class="grid__circle"></div>
-      <div class="grid__circle"></div>
-      <!-- Counter -->
-      <span class="grid__counter"></span>
+    <div class="game-wrapper">
+      <div class="game-wrapper__button" id="play" onclick="newGame(this)">
+        <p>Play</p>
+      </div>
     </div>
-
+    <div class="score-board">
+      <h4>Score Board:</h4>
+      <div class="score">
+        <div class="score score--red">
+          <h6>Red :</h6>
+          <p id="redScore">0</p>
+        </div>
+        <div class="score score--blue">
+          <h6>Blue :</h6>
+          <p id="blueScore">0</p>
+        </div>
+      </div>
+    </div>
     <script src="src/main.js"></script>
   </body>
   <footer></footer>
