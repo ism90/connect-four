@@ -3,16 +3,17 @@ const newGame = (button) => {
   button.style.display = "none";
   const game = document.querySelector(".game-wrapper");
 
-  const columns = [];
+  const columnsArray = [];
   const slotsArray = [];
 
-  let nextPlayer = "blue";
+  // Game 'state' for each slot (will be empty, blue or red)
+  let playState = "blue";
 
   for (let i = 0; i < 7; i++) {
     const column = document.createElement("div");
     column.className = "grid column";
     game.appendChild(column);
-    columns.push(column);
+    columnsArray.push(column);
   }
 
   class Slot {
@@ -21,14 +22,14 @@ const newGame = (button) => {
       this.row = row;
       this.elementHTML = elementHTML;
       //
-      this.playerMove = "";
+      this.playState = "";
     }
 
     clicked() {}
   }
 
   // Create Slots & Push to Column Array
-  columns.forEach((el, col) => {
+  columnsArray.forEach((el, col) => {
     let slotColumn = [];
     for (i = 0; i < 6; i++) {
       const divForSlot = document.createElement("div");
@@ -41,6 +42,8 @@ const newGame = (button) => {
       divForSlot.onclick = function () {
         slot.clicked();
       };
+      // Space out Slot divs
+      // divForSlot.style.margin = i;
     }
     slotsArray.push(slotColumn);
   });

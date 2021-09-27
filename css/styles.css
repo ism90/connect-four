@@ -32,6 +32,7 @@ body {
   margin-top: 5vh;
   align-items: center;
 }
+
 .score-board .score {
   display: flex;
   flex-direction: row;
@@ -40,7 +41,23 @@ body {
   padding: 5px 10px;
 }
 
+.column {
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  position: relative;
+}
+
 .slot {
+  background-color: #eaf0f1;
+  width: 90%;
+  height: 15%;
+  z-index: 2;
+  border-radius: 50%;
   box-shadow: inset 7px 7px 20px 0px rgba(50, 50, 50, 0.4);
   opacity: 1;
-}/*# sourceMappingURL=styles.css.map */
+}
+/*# sourceMappingURL=styles.css.map *//*# sourceMappingURL=styles.css.map */

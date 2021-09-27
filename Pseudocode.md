@@ -18,23 +18,17 @@ To be the first player to connect 4 of the same colored discs in a row (either v
 
 #### 1. Grid
 
-- 2d empty array for game begin state
-- 6 rows 7 columns
-- 42 potential moves 
-- gridArray = [
-  [null, null, null, null, null, null, null],
-  [null, null, null, null, null, null, null],
-  [null, null, null, null, null, null, null],
-  [null, null, null, null, null, null, null],
-  [null, null, null, null, null, null, null],
-  [null, null, null, null, null, null, null],
-
-- possible Array.values() = null, red or blue
-
+- Approach: auto generate html for grid of 'slots'
+- Initiate two empty arrays 
+  - columnsArray = [];
+  - slotsArray = [];
+- For loop to push 7 columns of divs to columnArray
+- For loop to push 6 rows of slots to columnsArray
+- Creating an array of columns with a row array in each column (hopefully)
+- Initial state of slots to be set as empty string
 
 #### 2. Player Moves
 
-- random 50/50 flip for first or second
 - players have to be assigned different color
 - event listeners for clicks - or onclick val
 - for loops for checking array 
