@@ -52,11 +52,18 @@ const newGame = (button) => {
       //
       const slot = new Slot(divForSlot, col, i);
       slotColumn.push(slot);
-      //
-      divForSlot.onclick = function () {
-        slot.clicked();
-      };
+      
+      // calls clicked() method when div clicked
+      divForSlot.onclick = () => slot.clicked();
+
+
+
+
+
     }
+
+ 
+
     slotsArray.push(slotColumn);
   });
   // Assigns clickable class to bottom row of grid & assigns current playState
