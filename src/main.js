@@ -106,8 +106,95 @@ const isDraw = (slotsArray) => {
   return isDraw;
 };
 
+// Testing Lines for Winner
+const testLines = (lines, color, slotsArray) => {
+  //needs four matched colors for win state
+  let matchingSlots = 1;
+  lines.forEach((line) => {
+    for (i = 0; i < line.length; i++) {
+      const slotLocation = line[i];
+      column = slotLocation[0]
+      row = slotLocation[1] 
+      // Keeps test within grid
+      if (slotLocation[0] >= 0 && column <= 6 && row <= 5) {
+        if (typeof slotsArray[column][row] !== "undefined") {
+          if (slotsArray[column][row].playState == color) {
+            matchingSlots += 1;
+            console.log(matchingSlots);
+          } else break;
+        }
+      } else break;
+    }
+  });
+};
+
 // Check for Winner
-const isWinner = (slotsArray) => {};
+const isWinner = (col, row, color, slotsArray) => {
+  const winningLines = {
+    // To check color of all slots to left and right of row
+    //
+    horizontal: [
+      [
+        [col - 1, row],
+        [col - 2, row],
+        [col - 3, row],
+      ],
+      [
+        [col + 1, row],
+        [col + 2, row],
+        [col + 3, row],
+      ],
+    ],
+    // checks down and up the rows
+    vertical: [
+      [
+        [col, row - 1],
+        [col, row - 2],
+        [col, row - 3],
+      ],
+      [
+        [col, row + 1],
+        [col, row + 2],
+        [col, row + 3],
+      ],
+    ],
+    diagonalLeft: [
+      [
+        [col - 1, row - 1],
+        [col - 2, row - 2],
+        [col - 3, row - 3],
+      ],
+      [
+        [col + 1, row + 1],
+        [col + 2, row + 2],
+        [col + 3, row + 3],
+      ],
+    ],
+    diagonalRight: [
+      [
+        [col - 1, row + 1],
+        [col - 2, row + 2],
+        [col - 3, row + 3],
+      ],
+      [
+        [col + 1, row - 1],
+        [col + 2, row - 2],
+        [col + 3, row - 3],
+      ],
+    ],
+  };
+  if (testLines(winningLines.horizontal, color, slotsArray) == true)
+    return true;
+
+  if (testLines(winningLines.vertical, color, slotsArray) == true) return true;
+  if (testLines(winningLines.diagonalLeft, color, slotsArray) == true)
+    return true;
+
+  if (testLines(winningLines.diagonalRight, color, slotsArray) == true)
+    return true;
+
+  return false;
+};
 
 const gameOver = (winner) => {
   console.log("game over");
