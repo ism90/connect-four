@@ -32,7 +32,9 @@ const newGame = (button) => {
       if (!el.classList.contains("clickable")) return;
       el.style.backgroundColor = nextColor;
       this.playState = nextColor;
-      //make next element clickable working upwards for bottom
+      // remove clickable class after click
+      el.classList.remove("clickable");
+      // make next element clickable working upwards for bottom
       if (slotsArray[this.column][this.row - 1]) {
         slotsArray[this.column][this.row - 1].elementHTML.classList.add(
           "clickable",
