@@ -1,14 +1,14 @@
-// Game Board Builder
+// Game Builder
 const newGame = (button) => {
   button.style.display = "none";
   const game = document.querySelector(".game-wrapper");
-
   const columnsArray = [];
   const slotsArray = [];
 
   // Game 'state' for each slot (will be empty, blue or red)
-  let playState = "blue";
+  let playerColor = "blue";
 
+  // Create Column Arrays
   for (let i = 0; i < 7; i++) {
     const column = document.createElement("div");
     column.className = "grid column";
@@ -16,6 +16,7 @@ const newGame = (button) => {
     columnsArray.push(column);
   }
 
+  // Class for Creating Slots and Handling Slot Clicks
   class Slot {
     constructor(elementHTML, column, row) {
       this.column = column;
@@ -25,7 +26,20 @@ const newGame = (button) => {
       this.playState = "";
     }
 
-    clicked() {}
+    clicked() {
+      const el = this.elementHTML;
+      // Checks if clickable
+      if (!el.classList.contains("clickable")) return;
+      el.style.backgroundColor = playerColor;
+      this.playState = playerColor;
+      //make next element clickable working upwards for bottom
+      if (slotsArray[this.column][this.row - 1]) {
+        slotsArray[this.column][this.row - 1].elementHTML.classList.add(
+          "clickable",
+          playerColor
+        );
+      }
+    }
   }
 
   // Create Slots & Push to Column Array
@@ -45,38 +59,23 @@ const newGame = (button) => {
     }
     slotsArray.push(slotColumn);
   });
-  // Assigns clickable class to bottom row of grid & current playState
-    slotsArray.forEach(col => {
-      col[5].elementHTML.classList.add("clickable", playState)
-    });
+  // Assigns clickable class to bottom row of grid & assigns current playState
+  slotsArray.forEach((col) => {
+    col[5].elementHTML.classList.add("clickable", playerColor);
+  });
   console.log(slotsArray);
 };
-
-
 
 // Functions for Win Decisions
 
 // Check for Draw
-const isDraw = (slotsArray) => {
-
-
-}
+const isDraw = (slotsArray) => {};
 
 // Check for Winner
-const isWinner = (slotsArray) => {
+const isWinner = (slotsArray) => {};
 
+const gameOver = (winner) => {};
 
-}
-
-const gameOver = (winner) => {
-
-}
-
-const setScore = (winner) => {
-  
-}
-
-
-
+const setScore = (winner) => {};
 
 newGame(document.getElementById("play"));
