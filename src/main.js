@@ -110,8 +110,15 @@ const isDraw = (slotsArray) => {
 const isWinner = (slotsArray) => {};
 
 const gameOver = (winner) => {
-  console.log("game over")
+  console.log("game over");
   setScore(winner);
+  // clear slots
+  document.querySelectorAll(".column").forEach((column) => {
+    column.innerHTML = "";
+    column.parentNode.removeChild(column);
+  });
+  // adds play button back
+  document.getElementById("play").style.display = "inherit";
 };
 
 const setScore = (winner) => {
