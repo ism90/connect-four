@@ -6,7 +6,7 @@ const newGame = (button) => {
   const slotsArray = [];
 
   // Game 'state' for each slot (will be empty, blue or red)
-  let playerColor = "blue";
+  let nextColor = "red";
 
   // Create Column Arrays
   for (let i = 0; i < 7; i++) {
@@ -30,15 +30,28 @@ const newGame = (button) => {
       const el = this.elementHTML;
       // Checks if clickable
       if (!el.classList.contains("clickable")) return;
-      el.style.backgroundColor = playerColor;
-      this.playState = playerColor;
+      el.style.backgroundColor = nextColor;
+      this.playState = nextColor;
       //make next element clickable working upwards for bottom
       if (slotsArray[this.column][this.row - 1]) {
         slotsArray[this.column][this.row - 1].elementHTML.classList.add(
           "clickable",
-          playerColor
+          nextColor
         );
       }
+      // change player color
+      let oldColor = nextColor;
+
+      if (nextColor == "red") {
+        nextColor = "blue";
+      } else {
+        nextColor = "red";
+      }
+
+      document.querySelectorAll(".clickable").forEach((el) => {
+        el.classList.remove(oldColor);
+        el.classList.add(nextColor);
+      });
     }
   }
 
@@ -52,23 +65,16 @@ const newGame = (button) => {
       //
       const slot = new Slot(divForSlot, col, i);
       slotColumn.push(slot);
-      
+
       // calls clicked() method when div clicked
       divForSlot.onclick = () => slot.clicked();
-
-
-
-
-
     }
-
- 
 
     slotsArray.push(slotColumn);
   });
   // Assigns clickable class to bottom row of grid & assigns current playState
   slotsArray.forEach((col) => {
-    col[5].elementHTML.classList.add("clickable", playerColor);
+    col[5].elementHTML.classList.add("clickable", nextColor);
   });
   console.log(slotsArray);
 };
