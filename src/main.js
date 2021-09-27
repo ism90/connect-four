@@ -113,8 +113,8 @@ const testLines = (lines, color, slotsArray) => {
   lines.forEach((line) => {
     for (i = 0; i < line.length; i++) {
       const slotLocation = line[i];
-      column = slotLocation[0]
-      row = slotLocation[1] 
+      column = slotLocation[0];
+      row = slotLocation[1];
       // Keeps test within grid
       if (slotLocation[0] >= 0 && column <= 6 && row <= 5) {
         if (typeof slotsArray[column][row] !== "undefined") {
@@ -126,6 +126,8 @@ const testLines = (lines, color, slotsArray) => {
       } else break;
     }
   });
+  if (matchingSlots >= 4) return true;
+  return false;
 };
 
 // Check for Winner
@@ -158,18 +160,22 @@ const isWinner = (col, row, color, slotsArray) => {
         [col, row + 3],
       ],
     ],
+    // Test diagonal '\' down and up
+    // checks left one col and up one row
     diagonalLeft: [
       [
         [col - 1, row - 1],
         [col - 2, row - 2],
         [col - 3, row - 3],
       ],
+      // checks right one col and down one row
       [
         [col + 1, row + 1],
         [col + 2, row + 2],
         [col + 3, row + 3],
       ],
     ],
+    // Test diagonal '/' down and up
     diagonalRight: [
       [
         [col - 1, row + 1],
@@ -210,6 +216,9 @@ const gameOver = (winner) => {
 
 const setScore = (winner) => {
   if (winner == "undefined") return;
+
+  document.getElementById(winner + "Score").innerHTML =
+    parseInt(document.getElementById(winner + "Score").innerHTML) + 1;
 };
 
 newGame(document.getElementById("play"));
