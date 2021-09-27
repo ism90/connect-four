@@ -34,6 +34,7 @@ const newGame = (button) => {
       this.playState = nextColor;
       // remove clickable class after click
       el.classList.remove("clickable");
+      el.classList.add("clicked");
       // make next element clickable working upwards for bottom
       if (slotsArray[this.column][this.row - 1]) {
         slotsArray[this.column][this.row - 1].elementHTML.classList.add(

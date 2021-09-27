@@ -1,5 +1,41 @@
 # Connect Four! 
-A browser based game created in HTML, CSS/SCSS and JavaScript for _nology week 5
+
+⁣⚪⚪⚪⚪⚪⚪⚪
+⚪⚪⚪⚪⚪⚪⚪
+⁣⚪⚪⚪⚪⚪⚪⚪
+⚪⚪🔵🔴⚪⚪⚪
+
+<em> A browser based game created in HTML, CSS/SCSS and JavaScript for _nology week 5 </em>
+
+
+## Game Rules 
+
+#### Objective:
+
+To be the first player to connect 4 of the same colored discs in a row (either vertically, horizontally, or diagonally).
+
+#### How to Play:
+
+- Players must alternate turns, and only one disc can be dropped in each turn.
+- On your turn, drop one of your colored discs from the top into any of the seven slots.
+- The game ends when there is a 4-in-a-row or a stalemate.
+- The starter of the previous game goes second on the next game.
+
+
+## Logic
+
+
+
+## Code
+
+
+### Making The Board
+
+
+### Defining the Moves
+
+
+### Getting the Winner
 
 
 
@@ -13,14 +49,7 @@ A browser based game created in HTML, CSS/SCSS and JavaScript for _nology week 5
 
 
 
-
-
-
-
-
-
-
-## Brief Requirements
+#### Brief Requirements
 
 - [ x ] PSEUDOCODE: Do it. Trust me, you will thank yourself. Feel free to check this with a coach before starting to code if you have any questions on approach.•
 - [ x ] You need to have it as a public repository on GitHuboIn the repo you will also need a README.mdwith a short intro to the project.

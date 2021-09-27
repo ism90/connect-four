@@ -5,7 +5,8 @@
 }
 
 body {
-  background-color: #eaf0f1;
+  background-color: #faaca8;
+  background-image: linear-gradient(19deg, #faaca8 0%, #ddd6f3 100%);
   height: 100vh;
 }
 
@@ -52,21 +53,38 @@ body {
 }
 
 .slot {
-  background-color: #eaf0f1;
+  background-color: transparent;
   width: 90%;
   height: 15%;
   z-index: 2;
   border-radius: 50%;
   box-shadow: inset 7px 7px 20px 0px rgba(50, 50, 50, 0.4);
   opacity: 1;
+  cursor: pointer;
 }
 
 .slot.clickable.red:hover {
-  background-color: red;
+  background-image: url(/assets/red.png);
+  background-size: cover;
+  background-position: center;
 }
 
 .slot.clickable.blue:hover {
-  background-color: blue;
+  background-image: url(/assets/blue.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.red.clicked {
+  background-image: url(/assets/red.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.blue.clicked {
+  background-image: url(/assets/blue.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 .game-wrapper__button {

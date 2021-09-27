@@ -2,17 +2,6 @@
 
 ### Connect Four!
 
-#### OBJECTIVE:
-
-To be the first player to connect 4 of the same colored discs in a row (either vertically, horizontally, or diagonally)
-
-#### HOW TO PLAY:
-
-- First, decide who goes first and what color each player will have.
-- Players must alternate turns, and only one disc can be dropped in each turn.
-- On your turn, drop one of your colored discs from the top into any of the seven slots.
-- The game ends when there is a 4-in-a-row or a stalemate.
-- The starter of the previous game goes second on the next game.
 
 ---
 
@@ -29,24 +18,11 @@ To be the first player to connect 4 of the same colored discs in a row (either v
 
 #### 2. Player Moves
 
-- players have to be assigned different color
-- event listeners for clicks - or onclick val
-- for loops(?) for checking array 
-- move has to be valid
-   - can't overwrite a red or blue value
-   - can only make move on bottom of grid
-   - alert if player makes invalid move
-- 'drop' the move -> has to fill array from <b>bottom up</b> in unpopulated area
-- populate array with move
-- player one move is over 
-- Then 'player 2' moves - same conditions. 
+- 
 
 #### 3. Win/Draw Conditions
 
-- Check Horizontal/Vertical/Diagonal for four reds || four blues
-  - i
-  - i
-- Draw if no null left in array
+- 
 
 #### Extra
 
@@ -55,5 +31,3 @@ To be the first player to connect 4 of the same colored discs in a row (either v
 
 
 #### Notes
-
-PC moves will be dumb - mode for vs CPU and mode for other user?
