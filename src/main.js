@@ -221,4 +221,4 @@ const setScore = (winner) => {
     parseInt(document.getElementById(winner + "Score").innerHTML) + 1;
 };
 
-newGame(document.getElementById("play"));
+
