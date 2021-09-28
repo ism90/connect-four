@@ -2,7 +2,7 @@
 
 <em> A browser based game created in HTML, CSS/SCSS and JavaScript for \_nology week 5 </em>
 
-[Preview](https://github.com/ism90/connect-four)
+[Preview](https://ism90.github.io/connect-four/)
 ## Game Rules
 
 #### Objective:
