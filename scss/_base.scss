@@ -1,14 +1,11 @@
 //Base: contained within this file are all your resets, variables, mixins, and any utility classes.
 
-// @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Racing+Sans+One&family=Special+Elite&display=swap");
+@font-face {
+  font-family: "Luckiest Guy";
+  src: url("../assets/LuckiestGuy.ttf") format("truetype");
+}
 
-// // Font Variables
-
-// $font-body: "Special Elite", sans-serif;
-// $font-header: "Fugaz One";
-// $font-button: "Fugaz One";
-
-
+$font-body: "Luckiest Guy";
 
 @mixin respond($breakpoint) {
   @if $breakpoint==tablet {
