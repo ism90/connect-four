@@ -50,7 +50,6 @@ const newGame = (button) => {
 
       if (isWinner(this.column, this.row, nextColor, slotsArray) == true) {
         gameOver(nextColor);
-
       }
 
       // Change player color
@@ -96,17 +95,15 @@ const newGame = (button) => {
 // Functions for Win Decisions
 
 // Check for Draw
-
 const isDraw = (slotsArray) => {
   let isDraw = true;
   slotsArray.forEach((col) => {
     col.forEach((slot) => {
       // if there is empty slot left, can't be a draw
       if (slot.playState == "") isDraw = false;
-    }); 
+    });
   });
   return isDraw;
-
 };
 
 // Testing Lines for Winner
@@ -137,7 +134,6 @@ const testLines = (lines, color, slotsArray) => {
 const isWinner = (col, row, color, slotsArray) => {
   const winningLines = {
     // To check color of all slots to left and right of row
-    //
     horizontal: [
       [
         [col - 1, row],
@@ -150,7 +146,7 @@ const isWinner = (col, row, color, slotsArray) => {
         [col + 3, row],
       ],
     ],
-    // checks down and up the rows
+    // Checks down and up the rows
     vertical: [
       [
         [col, row - 1],
@@ -164,7 +160,7 @@ const isWinner = (col, row, color, slotsArray) => {
       ],
     ],
     // Test diagonal '\' down and up
-    // checks left one col and up one row
+    // Checks left one col and up one row
     diagonalLeft: [
       [
         [col - 1, row - 1],
