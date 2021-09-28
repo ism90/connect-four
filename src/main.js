@@ -221,5 +221,3 @@ const setScore = (winner) => {
   document.getElementById(winner + "Score").innerHTML =
     parseInt(document.getElementById(winner + "Score").innerHTML) + 1;
 };
-
-
