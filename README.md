@@ -1,14 +1,9 @@
-# Connect Four! 
+# Connect Four!
 
-⁣⚪⚪⚪⚪⚪⚪⚪
-⚪⚪⚪⚪⚪⚪⚪
-⁣⚪⚪⚪⚪⚪⚪⚪
-⚪⚪🔵🔴⚪⚪⚪
+<em> A browser based game created in HTML, CSS/SCSS and JavaScript for \_nology week 5 </em>
 
-<em> A browser based game created in HTML, CSS/SCSS and JavaScript for _nology week 5 </em>
-
-
-## Game Rules 
+[Preview](https://ism90.github.io/js-game/)
+## Game Rules
 
 #### Objective:
 
@@ -21,34 +16,17 @@ To be the first player to connect 4 of the same colored discs in a row (either v
 - The game ends when there is a 4-in-a-row or a stalemate.
 - The starter of the previous game goes second on the next game.
 
-![Connect Four Game ]()
+![Connect Four Game ](https://github.com/ism90/js-game/blob/main/assets/readme.png)
 
 ## Logic
 
-
-
 ## Code
-
 
 ### Making The Board
 
-
 ### Defining the Moves
 
-
 ### Getting the Winner
-
-
-
-
-
-
-
-
-
-
-
-
 
 #### Brief Requirements
 
@@ -63,4 +41,4 @@ To be the first player to connect 4 of the same colored discs in a row (either v
 
 - [ x ] We would like you to take a Mobile first approach to the implementation. It needs to work on different device widths.
 
-- [  ] Add a link to this project on your portfolio –this is your first chance to really show off your web skills!
+- [ ] Add a link to this project on your portfolio –this is your first chance to really show off your web skills!
