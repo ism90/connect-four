@@ -50,6 +50,7 @@ const newGame = (button) => {
 
       if (isWinner(this.column, this.row, nextColor, slotsArray) == true) {
         gameOver(nextColor);
+
       }
 
       // Change player color
@@ -102,9 +103,10 @@ const isDraw = (slotsArray) => {
     col.forEach((slot) => {
       // if there is empty slot left, can't be a draw
       if (slot.playState == "") isDraw = false;
-    });
+    }); 
   });
   return isDraw;
+
 };
 
 // Testing Lines for Winner
@@ -205,6 +207,7 @@ const isWinner = (col, row, color, slotsArray) => {
 
 const gameOver = (winner) => {
   console.log("game over");
+
   setScore(winner);
   // clear slots
   document.querySelectorAll(".column").forEach((column) => {
@@ -212,6 +215,7 @@ const gameOver = (winner) => {
     column.parentNode.removeChild(column);
   });
   // adds play button back
+
   document.getElementById("play").style.display = "inherit";
 };
 

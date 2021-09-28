@@ -14,8 +14,8 @@ $font-body: "Luckiest Guy";
     }
   }
 
-  @if $breakpoint==laptop {
-    @media only screen and (min-width: 1024px) {
+  @if $breakpoint==desktop {
+    @media only screen and (min-width: 1200px) {
       @content;
     }
   }

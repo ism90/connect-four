@@ -26,6 +26,11 @@ body {
   margin-top: 10vh;
   color: blue;
 }
+@media only screen and (min-width: 768px) {
+  .title {
+    font-size: 2.5em;
+  }
+}
 .title span {
   color: red;
 }
@@ -133,11 +138,22 @@ body {
   background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png");
   cursor: pointer;
 }
+@media only screen and (min-width: 1200px) {
+  .game-wrapper {
+    width: 70%;
+    height: 65vh;
+  }
+}
 .game-wrapper__button {
   font-family: "Luckiest Guy";
   font-size: 2.5em;
   color: #ddd6f3;
   text-shadow: 0px 2px 2px rgba(10, 10, 10, 0.8);
+}
+@media only screen and (min-width: 768px) {
+  .game-wrapper__button {
+    font-size: 4em;
+  }
 }
 
 .score-board {
@@ -152,6 +168,11 @@ body {
 .score-board h4 {
   font-size: 1.5em;
   color: #ddd6f3;
+}
+@media only screen and (min-width: 768px) {
+  .score-board h4 {
+    font-size: 2.5em;
+  }
 }
 
 .score {
@@ -168,12 +189,22 @@ body {
   color: red;
   font-size: 1.5em;
 }
+@media only screen and (min-width: 768px) {
+  .score__red {
+    font-size: 2.5em;
+  }
+}
 
 .score__blue {
   padding: 10px;
   text-align: center;
   color: blue;
   font-size: 1.5em;
+}
+@media only screen and (min-width: 768px) {
+  .score__blue {
+    font-size: 2.5em;
+  }
 }
 
 .column {
@@ -187,7 +218,6 @@ body {
 }
 
 .slot {
-  background-color: transparent;
   width: 90%;
   height: 15%;
   z-index: 2;
@@ -213,12 +243,104 @@ body {
   background-image: url(/assets/red.png);
   background-size: cover;
   background-position: center;
+  -webkit-animation: bounce-in-top 0.8s both;
+          animation: bounce-in-top 0.8s both;
+}
+@keyframes bounce-in-top {
+  0% {
+    transform: translateY(-500px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    transform: translateY(-65px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  72% {
+    transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  81% {
+    transform: translateY(-28px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  90% {
+    transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  95% {
+    transform: translateY(-8px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  100% {
+    transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
 }
 
 .blue.clicked {
   background-image: url(/assets/blue.jpg);
   background-size: cover;
   background-position: center;
+  -webkit-animation: bounce-in-top 0.8s both;
+          animation: bounce-in-top 0.8s both;
+}
+@keyframes bounce-in-top {
+  0% {
+    transform: translateY(-500px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    transform: translateY(-65px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  72% {
+    transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  81% {
+    transform: translateY(-28px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  90% {
+    transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  95% {
+    transform: translateY(-8px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  100% {
+    transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
 }
 
 .game-wrapper__button {
