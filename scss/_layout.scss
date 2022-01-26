@@ -80,9 +80,15 @@ body {
   background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png");
   cursor: pointer;
 
-  @include respond(desktop) {
+
+  @include respond(tablet) {
     width: 70%;
-    height: 65vh;
+    height: 55vh;
+  }
+
+  @include respond(desktop) {
+    width: 50%;
+    height: 55vh;
   }
 
 

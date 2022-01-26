@@ -138,10 +138,16 @@ body {
   background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png");
   cursor: pointer;
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 768px) {
   .game-wrapper {
     width: 70%;
-    height: 65vh;
+    height: 55vh;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .game-wrapper {
+    width: 50%;
+    height: 55vh;
   }
 }
 .game-wrapper__button {

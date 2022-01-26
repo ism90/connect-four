@@ -4,6 +4,8 @@ const newGame = (button) => {
   const game = document.querySelector(".game-wrapper");
   const columnsArray = [];
   const slotsArray = [];
+  // console.log(slotsArray);
+  
 
   // Game 'state' for each slot (will be empty, blue or red)
   let nextColor = "red";
@@ -64,8 +66,9 @@ const newGame = (button) => {
       document.querySelectorAll(".clickable").forEach((el) => {
         el.classList.remove(oldColor);
         el.classList.add(nextColor);
+        
       });
-    }
+    } 
   }
 
   // Create Slots & Push to Column Array
