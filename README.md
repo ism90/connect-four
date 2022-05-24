@@ -16,7 +16,7 @@ To be the first player to connect 4 of the same colored discs in a row either ve
 
 ---
 
-## The Code
+## About
 
 #### 1. Grid
 
