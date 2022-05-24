@@ -5,7 +5,6 @@ const newGame = (button) => {
   const columnsArray = [];
   const slotsArray = [];
   // console.log(slotsArray);
-  
 
   // Game 'state' for each slot (will be empty, blue or red)
   let nextColor = "red";
@@ -35,8 +34,7 @@ const newGame = (button) => {
       el.style.backgroundColor = nextColor;
       this.playState = nextColor;
       // remove clickable class after click
-      el.classList.remove("clickable");
-      el.classList.add("clicked");
+      el.classList.replace("clickable", "clicked");
       // make next element clickable working upwards for bottom
       if (slotsArray[this.column][this.row - 1]) {
         slotsArray[this.column][this.row - 1].elementHTML.classList.add(
@@ -46,11 +44,11 @@ const newGame = (button) => {
       }
 
       // Check for Game Over and handle
-      if (isDraw(slotsArray) == true) {
+      if (isDraw(slotsArray)) {
         gameOver(nextColor);
       }
 
-      if (isWinner(this.column, this.row, nextColor, slotsArray) == true) {
+      if (isWinner(this.column, this.row, nextColor, slotsArray)) {
         gameOver(nextColor);
       }
 
@@ -66,9 +64,8 @@ const newGame = (button) => {
       document.querySelectorAll(".clickable").forEach((el) => {
         el.classList.remove(oldColor);
         el.classList.add(nextColor);
-        
       });
-    } 
+    }
   }
 
   // Create Slots & Push to Column Array
@@ -191,17 +188,21 @@ const isWinner = (col, row, color, slotsArray) => {
       ],
     ],
   };
-  if (testLines(winningLines.horizontal, color, slotsArray) == true)
-    return true;
 
-  if (testLines(winningLines.vertical, color, slotsArray) == true) return true;
-  if (testLines(winningLines.diagonalLeft, color, slotsArray) == true)
-    return true;
-
-  if (testLines(winningLines.diagonalRight, color, slotsArray) == true)
-    return true;
-
-  return false;
+  const horizontalWin = testLines(winningLines.horizontal, color, slotsArray);
+  const verticalWin = testLines(winningLines.vertical, color, slotsArray);
+  const leftDiagonalWin = testLines(
+    winningLines.diagonalLeft,
+    color,
+    slotsArray
+  );
+  const rightDiagonalWin = testLines(
+    winningLines.diagonalRight,
+    color,
+    slotsArray
+  );
+  // if one is true it will return true otherwise it will return false
+  return horizontalWin || verticalWin || leftDiagonalWin || rightDiagonalWin;
 };
 
 const gameOver = (winner) => {
