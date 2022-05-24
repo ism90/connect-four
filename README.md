@@ -4,7 +4,7 @@
 
 Styled with SCSS and using BEM naming conventions, with a responsive layout and animated disc drops.
 
-[Live Preview](https://link-url-here.org)
+[Live Preview](https://ism90.github.io/connect-four/)
 
 ## Game Rules
 
