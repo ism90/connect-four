@@ -1,9 +1,8 @@
-
-
-
 let nextColor = "red";
-const columnsArray = [];
-const slotsArray = [];
+
+const game = document.querySelector(".game-wrapper");
+let columnsArray = [];
+let slotsArray = [];
 
 // Class for Creating Slots and Handling Slot Clicks
 class Slot {
@@ -59,7 +58,6 @@ class Slot {
 // Game Builder
 const newGame = (button) => {
   button.style.display = "none";
-  const game = document.querySelector(".game-wrapper");
 
   // console.log(slotsArray);
 
@@ -219,9 +217,11 @@ const gameOver = (winner) => {
     column.innerHTML = "";
     column.parentNode.removeChild(column);
   });
-  // adds play button back
 
+  // adds play button back, resets arrays
   document.getElementById("play").style.display = "inherit";
+  columnsArray = [];
+  slotsArray = [];
 };
 
 const setScore = (winner) => {
