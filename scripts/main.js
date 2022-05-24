@@ -1,5 +1,4 @@
 let nextColor = "red";
-
 const game = document.querySelector(".game-wrapper");
 let columnsArray = [];
 let slotsArray = [];
@@ -10,7 +9,6 @@ class Slot {
     this.column = column;
     this.row = row;
     this.elementHTML = elementHTML;
-    //
     this.playState = "";
   }
 
@@ -20,9 +18,9 @@ class Slot {
     if (!el.classList.contains("clickable")) return;
     el.style.backgroundColor = nextColor;
     this.playState = nextColor;
-    // remove clickable class after click
+    // Remove clickable class after click
     el.classList.replace("clickable", "clicked");
-    // make next element clickable working upwards for bottom
+    // Make next element clickable working upwards for bottom
     if (slotsArray[this.column][this.row - 1]) {
       slotsArray[this.column][this.row - 1].elementHTML.classList.add(
         "clickable",
@@ -39,7 +37,7 @@ class Slot {
       gameOver(nextColor);
     }
 
-    // Change player color
+    // Change player color - loser plays next
     let oldColor = nextColor;
 
     if (nextColor == "red") {
@@ -58,10 +56,7 @@ class Slot {
 // Game Builder
 const newGame = (button) => {
   button.style.display = "none";
-
   // console.log(slotsArray);
-
-  // Game 'state' for each slot (will be empty, blue or red)
 
   // Create Column Arrays
   for (let i = 0; i < 7; i++) {
@@ -82,7 +77,7 @@ const newGame = (button) => {
       const slot = new Slot(divForSlot, col, i);
       slotColumn.push(slot);
 
-      // calls clicked() method when div clicked
+      // Calls clicked() method when div clicked
       divForSlot.onclick = () => slot.clicked();
     }
 
@@ -102,7 +97,7 @@ const isDraw = (slotsArray) => {
   let isDraw = true;
   slotsArray.forEach((col) => {
     col.forEach((slot) => {
-      // if there is empty slot left, can't be a draw
+      // If there is empty slot left, can't be a draw
       if (slot.playState == "") isDraw = false;
     });
   });
@@ -111,14 +106,14 @@ const isDraw = (slotsArray) => {
 
 // Testing Lines for Winner
 const testLines = (lines, color, slotsArray) => {
-  //needs four matched colors for win state
   let matchingSlots = 1;
   lines.forEach((line) => {
     for (i = 0; i < line.length; i++) {
       const slotLocation = line[i];
-      column = slotLocation[0];
-      row = slotLocation[1];
-      // Keeps test within grid
+      const column = slotLocation[0];
+      const row = slotLocation[1];
+
+      // Checks if within grid, a valid slot, and a color match
       if (slotLocation[0] >= 0 && column <= 6 && row <= 5) {
         if (typeof slotsArray[column][row] !== "undefined") {
           if (slotsArray[column][row].playState == color) {
@@ -129,8 +124,7 @@ const testLines = (lines, color, slotsArray) => {
       } else break;
     }
   });
-  if (matchingSlots >= 4) return true;
-  return false;
+  return matchingSlots >= 4;
 };
 
 // Check for Winner
@@ -204,21 +198,21 @@ const isWinner = (col, row, color, slotsArray) => {
     color,
     slotsArray
   );
-  // if one is true it will return true otherwise it will return false
+  // If one is true it will return true otherwise it will return false
   return horizontalWin || verticalWin || leftDiagonalWin || rightDiagonalWin;
 };
 
 const gameOver = (winner) => {
-  console.log("game over");
+  console.log("Game Over");
 
   setScore(winner);
-  // clear slots
+  // Clear slots
   document.querySelectorAll(".column").forEach((column) => {
     column.innerHTML = "";
     column.parentNode.removeChild(column);
   });
 
-  // adds play button back, resets arrays
+  // Adds play button back, resets arrays
   document.getElementById("play").style.display = "inherit";
   columnsArray = [];
   slotsArray = [];
